@@ -1,0 +1,1 @@
+get-delegated-ad-permission
