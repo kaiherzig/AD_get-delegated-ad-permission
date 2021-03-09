@@ -1,11 +1,10 @@
 $ViewMode = "grid" #Grid oder csv
-$DomainController = "mydc.mydomain.com"
-$DN = "DC=intra,DC=mydomain,DC=com"
-#If using CSV specify FilePath
-$FilePath = "C:\Users\Administrator\Desktop\query.csv"
+$DomainController = "mydc.mydomain.com" #FQDN Domain Controller
+$DN = "DC=intra,DC=mydomain,DC=com" #If using CSV specify FilePath
+$FilePath = "C:\Users\Administrator\Desktop\query.csv" #FilePath for CSV
 $UseFilter = $false #Bool - $true or $false
+$Verbose = $true #$true or $false
 $ObjectFilter = "(|(objectClass=domain)(objectClass=organizationalUnit)(objectClass=group)(sAMAccountType=805306368)(objectCategory=Computer))"
-$Verbose = $true
 
 $baseSearch = New-Object System.DirectoryServices.DirectoryEntry("LDAP://$DomainController/$DN")
 $dnSearch = New-Object System.DirectoryServices.DirectorySearcher($bSearch)
