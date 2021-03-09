@@ -11,7 +11,7 @@ $dnSearch = New-Object System.DirectoryServices.DirectorySearcher($bSearch)
 $dnSearch.SearchRoot = $baseSearch
 $dnSearch.PageSize = 1000
 if ($UseFilter -eq $true) {
-        $dSearch.Filter = $ObjectFilter
+        $dnSearch.Filter = $ObjectFilter
 }
 $dnSearch.SearchScope = "Subtree"
 
@@ -22,7 +22,7 @@ $extPerms = `
 
 $result = @()
 
-foreach ($objResult in $dSearch.FindAll()) {
+foreach ($objResult in $dnSearch.FindAll()) {
         $obj = $objResult.GetDirectoryEntry()
 
         if ($Verbose -eq $true) {
